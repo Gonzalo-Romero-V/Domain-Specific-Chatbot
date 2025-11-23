@@ -1,0 +1,13 @@
+# Entorno virtual
+venv/
+.env/
+
+# Cache de Python
+__pycache__/
+*.pyc
+
+# Archivos temporales
+*.log
+
+# Archivos grandes derivados
+backend/data/

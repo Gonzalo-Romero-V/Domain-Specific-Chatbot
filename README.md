@@ -34,7 +34,30 @@ Este chatbot utiliza como única base de conocimiento el libro:
 ## Tecnologías y Herramientas Principales
 
 ### Backend (Python)
-- Detalle 
+- Librerías principales: `openai`, `PyMuPDF`
+
+- Ejemplo de imports (listas aquí para referencia):
+	- `import json`
+	- `import uuid`
+	- `from typing import List, Dict, Any`
+	- `from openai import OpenAI`
+	- `import fitz  # PyMuPDF`
+
+
+
+- Crear y Activar entorno virtual (venv):
+
+	```powershell
+	python -m venv venv
+	venv\Scripts\activate
+	```
+
+
+- Instalar dependencias:
+
+	```powershell
+	pip install -r requirements.txt
+	```
 
 ### Frontend
 - Detalle
