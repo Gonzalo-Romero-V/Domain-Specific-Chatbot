@@ -1,12 +1,14 @@
 import fitz  # PyMuPDF
 import os
+from pathlib import Path
 
 def extract_text_from_pdf(pdf_path, start_page=0, end_page=212):
     """
     Extrae texto del PDF entre start_page y end_page (índices base 0).
     Por ejemplo, páginas 1 a 212 en el documento = índices 0 a 211 aquí.
     """
-    doc = fitz.open(pdf_path)
+    # Convertir Path a string para compatibilidad con fitz.open si es necesario
+    doc = fitz.open(str(pdf_path))
     text = ""
 
     # Aseguramos no exceder el número de páginas del documento
@@ -19,13 +21,15 @@ def extract_text_from_pdf(pdf_path, start_page=0, end_page=212):
     return text
 
 # --- Configuración ---
-# Definir rutas relativas al script para mayor robustez
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, "data")
+# Definir rutas usando pathlib para mayor legibilidad y robustez
+# Script en: backend/pipeline/01_extraction.py
+# parents[0] = pipeline, parents[1] = backend, parents[2] = root
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
 
 # Nombre del archivo PDF real en la carpeta data
 pdf_filename = "FUNDAMENTOS_DE_LA_IA_VOLUMEN_I.pdf"
-pdf_path = os.path.join(DATA_DIR, pdf_filename)
+pdf_path = DATA_DIR / pdf_filename
 
 # --- Ejecución ---
 try:
@@ -44,7 +48,7 @@ try:
 
     # --- Guardar el texto en un archivo .txt ---
     output_filename = "extraction_output.txt"
-    output_file = os.path.join(DATA_DIR, output_filename)
+    output_file = DATA_DIR / output_filename
     
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(full_text)

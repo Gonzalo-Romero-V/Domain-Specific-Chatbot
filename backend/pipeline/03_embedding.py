@@ -16,6 +16,7 @@ Características:
 import json
 import uuid
 import os
+from pathlib import Path
 from typing import List, Dict, Any
 
 from openai import OpenAI
@@ -26,16 +27,18 @@ from openai import OpenAI
 # ===============================================================
 
 # Definir rutas relativas al script para mayor robustez
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, "data")
+# Script en: backend/pipeline/03_embedding.py
+# parents[0] = pipeline, parents[1] = backend, parents[2] = root
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
 
 CONFIG = {
     "openai": {
         "model": "text-embedding-3-large",  # cambiar aquí para experimentar
     },
     "paths": {
-        "input_chunks": os.path.join(DATA_DIR, "chunking_output.json"),
-        "output_embeddings": os.path.join(DATA_DIR, "embedding_output.jsonl")
+        "input_chunks": DATA_DIR / "chunking_output.json",
+        "output_embeddings": DATA_DIR / "embedding_output.jsonl"
     }
 }
 
@@ -45,7 +48,7 @@ CONFIG = {
 # (La API key se toma automáticamente del entorno: .env o variables)
 # ===============================================================
 
-from utils import get_openai_client
+from backend.pipeline.utils import get_openai_client
 client = get_openai_client()
 
 # ===============================================================

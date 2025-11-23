@@ -18,12 +18,15 @@ def chunk_by_paragraphs(text):
     return chunks
 
 import os
+from pathlib import Path
 
 # --- Configuración de rutas ---
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-INPUT_FILE = os.path.join(DATA_DIR, "extraction_output.txt")
-OUTPUT_FILE = os.path.join(DATA_DIR, "chunking_output.json")
+# Script en: backend/pipeline/02_chunking.py
+# parents[0] = pipeline, parents[1] = backend, parents[2] = root
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
+INPUT_FILE = DATA_DIR / "extraction_output.txt"
+OUTPUT_FILE = DATA_DIR / "chunking_output.json"
 
 # --- Cargar el texto extraído ---
 try:
