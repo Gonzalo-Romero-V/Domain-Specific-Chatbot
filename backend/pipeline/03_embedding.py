@@ -48,7 +48,7 @@ CONFIG = {
 # (La API key se toma automáticamente del entorno: .env o variables)
 # ===============================================================
 
-from backend.pipeline.utils import get_openai_client
+from utils import get_openai_client
 client = get_openai_client()
 
 # ===============================================================
@@ -97,6 +97,7 @@ def process_chunk(chunk: Dict[str, Any]) -> Dict[str, Any]:
     Devuelve:
     {
       "id": "...",
+      "text": "...",     # ← NECESARIO para CHROMA
       "embedding": [...],
       "metadata": {...}
     }
@@ -105,6 +106,7 @@ def process_chunk(chunk: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         "id": chunk["id"],
+        "text": chunk["text"],     # ← NECESARIO para CHROMA
         "embedding": embedding,
         "metadata": chunk.get("metadata", {})
     }
