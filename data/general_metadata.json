@@ -1,0 +1,618 @@
+{
+  "titulo_libro": "FUNDAMENTOS DE LA INTELIGENCIA ARTIFICIAL: UNA VISION INTRODUCTORIA",
+  "volumen": "I",
+  "edicion": "Primera Edición, Julio 2024",
+  "isbn_general": "978-631-6557-23-0",
+  "isbn_tomo1": "978-631-6557-25-4",
+  "isbn_tomo2": "978-631-6557-26-1",
+  "dedicatoria": "A los niñ@s: Leonel Robayo Moreno, Victoria Robayo Moreno y Benjamín Moreno Bastidas. A quienes inspiraron esta obra: Peter Norving, Stuart Russell, Brian Yu y Hugo Banda.",
+  "tabla_de_contenido": [
+    {
+      "seccion": "CONTENIDO",
+      "pagina": "XIII"
+    },
+    {
+      "seccion": "ÍNDICE DE FIGURAS",
+      "pagina": "XVI",
+      "figuras": [
+        {
+          "numero": "1.1",
+          "titulo": "John McCarthy",
+          "pagina": 2
+        },
+        {
+          "numero": "1.2",
+          "titulo": "Áreas de investigación de la inteligencia artificial",
+          "pagina": 15
+        },
+        {
+          "numero": "1.3",
+          "titulo": "Alan Turing",
+          "pagina": 22
+        },
+        {
+          "numero": "1.4",
+          "titulo": "Esquema de un agente",
+          "pagina": 25
+        },
+        {
+          "numero": "1.5",
+          "titulo": "Rompecabezas",
+          "pagina": 26
+        },
+        {
+          "numero": "1.6",
+          "titulo": "Tamaño de recipientes en litros",
+          "pagina": 27
+        },
+        {
+          "numero": "1.7",
+          "titulo": "Robots jugando futbol",
+          "pagina": 30
+        },
+        {
+          "numero": "1.8",
+          "titulo": "Arquitectura Reactiva Simple",
+          "pagina": 51
+        },
+        {
+          "numero": "1.9",
+          "titulo": "Arquitectura Deliberante",
+          "pagina": 52
+        },
+        {
+          "numero": "1.10",
+          "titulo": "Arquitectura por Finalidad",
+          "pagina": 53
+        },
+        {
+          "numero": "1.11",
+          "titulo": "Arquitectura Basado en el razonamiento humano",
+          "pagina": 54
+        },
+        {
+          "numero": "1.12",
+          "titulo": "Arquitectura de agente de reforzamiento",
+          "pagina": 55
+        },
+        {
+          "numero": "1.13",
+          "titulo": "Arquitectura de agente de aprendizaje profundo",
+          "pagina": 56
+        },
+        {
+          "numero": "1.14",
+          "titulo": "Arquitectura de agente multiagente",
+          "pagina": 58
+        },
+        {
+          "numero": "1.15",
+          "titulo": "Red semántica",
+          "pagina": 65
+        },
+        {
+          "numero": "1.16",
+          "titulo": "Árbol de decisión",
+          "pagina": 71
+        },
+        {
+          "numero": "2.1",
+          "titulo": "Tamaño de recipientes",
+          "pagina": 97
+        },
+        {
+          "numero": "3.1",
+          "titulo": "Árbol binario",
+          "pagina": 118
+        },
+        {
+          "numero": "3.2",
+          "titulo": "Árbol de búsqueda",
+          "pagina": 123
+        },
+        {
+          "numero": "3.3",
+          "titulo": "Árbol con límite de 2",
+          "pagina": 123
+        },
+        {
+          "numero": "3.4",
+          "titulo": "Grafo de búsqueda",
+          "pagina": 129
+        },
+        {
+          "numero": "3.5",
+          "titulo": "Máximo global y Máximo local",
+          "pagina": 141
+        },
+        {
+          "numero": "3.6",
+          "titulo": "Mínimo global y Mínimo local",
+          "pagina": 141
+        },
+        {
+          "numero": "3.7",
+          "titulo": "Máximo local plano y hombro",
+          "pagina": 142
+        },
+        {
+          "numero": "3.8",
+          "titulo": "N-Reinas",
+          "pagina": 142
+        },
+        {
+          "numero": "3.9",
+          "titulo": "Cursos que toman los estudiantes",
+          "pagina": 158
+        },
+        {
+          "numero": "3.10",
+          "titulo": "Grafo de los cursos",
+          "pagina": 159
+        },
+        {
+          "numero": "3.11",
+          "titulo": "Asignación de días a las variables",
+          "pagina": 164
+        },
+        {
+          "numero": "3.12",
+          "titulo": "Uso de la heurística VMR",
+          "pagina": 166
+        },
+        {
+          "numero": "3.13",
+          "titulo": "Heurística de grado",
+          "pagina": 166
+        },
+        {
+          "numero": "3.14",
+          "titulo": "Asignación de día a la variable C",
+          "pagina": 167
+        },
+        {
+          "numero": "3.15",
+          "titulo": "Árbol de decisión binario",
+          "pagina": 172
+        },
+        {
+          "numero": "3.16",
+          "titulo": "Fases de entrenamiento y prueba",
+          "pagina": 175
+        },
+        {
+          "numero": "3.17",
+          "titulo": "Matriz de Confusión",
+          "pagina": 178
+        }
+      ]
+    },
+    {
+      "seccion": "ÍNDICE DE TABLAS",
+      "pagina": "XVIII",
+      "tablas": [
+        {
+          "numero": "1-1",
+          "titulo": "Factores de diseño",
+          "pagina": 28
+        },
+        {
+          "numero": "1-2",
+          "titulo": "Propiedades del entorno de trabajo y ejemplos de agentes",
+          "pagina": 31
+        },
+        {
+          "numero": "2-1",
+          "titulo": "Conectores básicos de la lógica proposicional",
+          "pagina": 83
+        },
+        {
+          "numero": "2-2",
+          "titulo": "Tablas de verdad para operadores lógicos",
+          "pagina": 83
+        },
+        {
+          "numero": "2-3",
+          "titulo": "Modelos posibles",
+          "pagina": 86
+        },
+        {
+          "numero": "2-4",
+          "titulo": "Base de conocimiento en base a P",
+          "pagina": 87
+        },
+        {
+          "numero": "2-5",
+          "titulo": "Base de conocimiento en base a Q",
+          "pagina": 87
+        },
+        {
+          "numero": "2-6",
+          "titulo": "Base de conocimiento en base a R",
+          "pagina": 88
+        },
+        {
+          "numero": "2-7",
+          "titulo": "Fases del proceso de encaminamiento hacia adelante",
+          "pagina": 108
+        }
+      ]
+    },
+    {
+      "seccion": "RESUMEN",
+      "pagina": "XIX"
+    },
+    {
+      "seccion": "INTRODUCCIÓN",
+      "pagina": "XX"
+    },
+    {
+      "capitulo": "1",
+      "titulo": "EXPLORANDO LA INTELIGENCIA ARTIFICIAL",
+      "pagina": 1,
+      "subsecciones": [
+        {
+          "numero": "1.1",
+          "titulo": "Breve historia cronológica de la inteligencia artificial",
+          "pagina": 3
+        },
+        {
+          "numero": "1.2",
+          "titulo": "Contribuciones de las ciencias a la inteligencia artificial",
+          "pagina": 10
+        },
+        {
+          "numero": "1.3",
+          "titulo": "Areas de investigación de la inteligencia artificial",
+          "pagina": 14
+        },
+        {
+          "numero": "1.4",
+          "titulo": "Influencia significativa de la inteligencia artificial",
+          "pagina": 19
+        },
+        {
+          "numero": "1.5",
+          "titulo": "Turing y la Evaluación de la Inteligencia de las Máquinas",
+          "pagina": 21
+        },
+        {
+          "numero": "1.6",
+          "titulo": "Agentes inteligentes",
+          "pagina": 23
+        },
+        {
+          "numero": "1.7",
+          "titulo": "Diseño del agente",
+          "pagina": 25,
+          "subsecciones": [
+            {
+              "numero": "1.7.1",
+              "titulo": "Propiedades del entorno de trabajo",
+              "pagina": 31
+            },
+            {
+              "numero": "1.7.2",
+              "titulo": "Clases de agentes",
+              "pagina": 42
+            },
+            {
+              "numero": "1.7.3",
+              "titulo": "Arquitecturas de programas para agentes",
+              "pagina": 50
+            }
+          ]
+        },
+        {
+          "numero": "1.8",
+          "titulo": "El conocimiento",
+          "pagina": 59
+        },
+        {
+          "numero": "1.9",
+          "titulo": "Representación del conocimiento",
+          "pagina": 64,
+          "subsecciones": [
+            {
+              "numero": "1.9.1",
+              "titulo": "Métodos de representación del conocimiento",
+              "pagina": 65
+            }
+          ]
+        },
+        {
+          "numero": "1.10",
+          "titulo": "Agente basado en conocimiento",
+          "pagina": 76
+        }
+      ]
+    },
+    {
+      "capitulo": "2",
+      "titulo": "FUNDAMENTOS DE LÓGICA Y REGLAS DE PRODUCCIÓN",
+      "pagina": 79,
+      "subsecciones": [
+        {
+          "numero": "2.1",
+          "titulo": "Lógica",
+          "pagina": 79,
+          "subsecciones": [
+            {
+              "numero": "2.1.1",
+              "titulo": "Lógica proposicional",
+              "pagina": 82
+            },
+            {
+              "numero": "2.1.2",
+              "titulo": "Lógica de primer orden",
+              "pagina": 88
+            },
+            {
+              "numero": "2.1.3",
+              "titulo": "Cuantificadores",
+              "pagina": 92
+            },
+            {
+              "numero": "2.1.4",
+              "titulo": "Razonamiento",
+              "pagina": 93
+            }
+          ]
+        },
+        {
+          "numero": "2.2",
+          "titulo": "Reglas de producción",
+          "pagina": 104,
+          "subsecciones": [
+            {
+              "numero": "2.2.1",
+              "titulo": "Encaminamiento hacia adelante",
+              "pagina": 106
+            },
+            {
+              "numero": "2.2.2",
+              "titulo": "Encaminamiento hacia atrás",
+              "pagina": 109
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "capitulo": "3",
+      "titulo": "METODOS Y ESTRATEGIAS DE BUSQUEDA",
+      "pagina": 116,
+      "subsecciones": [
+        {
+          "numero": "3.1",
+          "titulo": "Búsqueda no informada",
+          "pagina": 116,
+          "subsecciones": [
+            {
+              "numero": "3.1.1",
+              "titulo": "Búsqueda preferentemente por amplitud",
+              "pagina": 117
+            },
+            {
+              "numero": "3.1.2",
+              "titulo": "Búsqueda primero en profundidad",
+              "pagina": 120
+            },
+            {
+              "numero": "3.1.3",
+              "titulo": "Búsqueda de profundidad limitada",
+              "pagina": 122
+            },
+            {
+              "numero": "3.1.4",
+              "titulo": "Búsqueda por profundización iterativa",
+              "pagina": 124
+            },
+            {
+              "numero": "3.1.5",
+              "titulo": "Búsqueda de costo uniforme",
+              "pagina": 128
+            }
+          ]
+        },
+        {
+          "numero": "3.2",
+          "titulo": "Búsqueda informada",
+          "pagina": 131,
+          "subsecciones": [
+            {
+              "numero": "3.2.1",
+              "titulo": "Búsqueda avara (primero el mejor)",
+              "pagina": 132
+            },
+            {
+              "numero": "3.2.2",
+              "titulo": "Búsqueda A*",
+              "pagina": 134
+            }
+          ]
+        },
+        {
+          "numero": "3.3",
+          "titulo": "Optimización",
+          "pagina": 137,
+          "subsecciones": [
+            {
+              "numero": "3.3.1",
+              "titulo": "Búsqueda local",
+              "pagina": 138
+            },
+            {
+              "numero": "3.3.2",
+              "titulo": "Búsqueda de escalada de colinas",
+              "pagina": 140
+            },
+            {
+              "numero": "3.3.3",
+              "titulo": "Variantes de escalada de colinas",
+              "pagina": 143
+            },
+            {
+              "numero": "3.3.4",
+              "titulo": "Recocido simulado",
+              "pagina": 153
+            },
+            {
+              "numero": "3.3.5",
+              "titulo": "Programación lineal",
+              "pagina": 157
+            },
+            {
+              "numero": "3.3.6",
+              "titulo": "Satisfacción de restricciones",
+              "pagina": 158
+            },
+            {
+              "numero": "3.3.7",
+              "titulo": "Búsqueda de retroceso",
+              "pagina": 163
+            },
+            {
+              "numero": "3.3.8",
+              "titulo": "Inferencia",
+              "pagina": 164
+            }
+          ]
+        },
+        {
+          "numero": "3.4",
+          "titulo": "Arboles de decisión",
+          "pagina": 167,
+          "subsecciones": [
+            {
+              "numero": "3.4.1",
+              "titulo": "Estructura de los árboles de clasificación",
+              "pagina": 172
+            },
+            {
+              "numero": "3.4.2",
+              "titulo": "Evaluación del modelo",
+              "pagina": 176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seccion": "BIBLIOGRAFÍA",
+      "pagina": 182
+    },
+    {
+      "seccion": "DE LOS AUTORES",
+      "pagina": 186,
+      "subsecciones": [
+        {
+          "nombre": "PATRICIO XAVIER MORENO VALLEJO",
+          "pagina": 186
+        },
+        {
+          "nombre": "GISEL KATERINE BASTIDAS GUACHO",
+          "pagina": 187
+        },
+        {
+          "nombre": "PATRICIO RENE MORENO COSTALES",
+          "pagina": 188
+        }
+      ]
+    }
+  ],
+  "editorial": {
+    "nombre": "Puerto Madero Editorial",
+    "enlace_web": "https://puertomaderoeditorial.com.ar/index.php/pmea",
+    "ubicacion": "La Plata – Argentina",
+    "logotipo": null,
+    "cuil": "20630333971",
+    "direccion": "Calle 45 N491 entre 4 y 5, Dirección de Publicaciones Científicas, Puerto Madero Editorial, La Plata, Buenos Aires, Argentina",
+    "telefono": [
+      "+54 9 221 314 5902",
+      "+54 9 221 531 5142"
+    ],
+    "codigo_postal": "AR1900",
+    "responsable": "© Puerto Madero Editorial Académica"
+  },
+  "autores": [
+    {
+      "nombre": "Patricio Xavier Moreno Vallejo",
+      "institucion": "Escuela Superior Politécnica de Chimborazo, Facultad de Administración de Empresas, Carrera de Gestión del Transporte",
+      "direccion": "Panamericana Sur Km 1 1/2, EC060155, Riobamba, Chimborazo, Ecuador",
+      "email": "pxmoreno@espoch.edu.ec",
+      "orcid": "https://orcid.org/0000-0002-9317-9884",
+      "estudios": [
+        "Master of Science Major – Computer Science and Applications, Virginia Polytechnic Institute and State University, Estados Unidos de América",
+        "Ingeniero en Sistemas Informáticos, Escuela Chimborazo, Ecuador"
+      ],
+      "experiencia": [
+        "Docente en la Escuela Superior Politécnica de Chimborazo desde Octubre del 2018 hasta la actualidad.",
+        "Senior Developer en Top-Tech Advisors desde Agosto – 2018 hasta Septiembre – 2018.",
+        "Teaching Assistant – Docente en Virginia Polytechnic Institute and State University (Virginia Tech) desde Agosto – 2016 hasta Mayo – 2017.",
+        "Web Developer en Organization of American States (OEA) - Department of Information and Technology Services desde Enero – 2016 hasta Mayo – 2016.",
+        "Program Developer en EasySoft S.A. desde Septiembre – 2014 hasta Septiembre – 2015.",
+        "Desarrollador de Sistemas en Clínica Riobamba desde Mayo – 2013 hasta Mayo – 2014.",
+        "Desarrollador Web en la Escuela Superior Politécnica de Chimborazo desde Febrero – 2013 hasta Julio – 2013."
+      ]
+    },
+    {
+      "nombre": "Gisel Katerine Bastidas Guacho",
+      "institucion": "Escuela Superior Politécnica de Chimborazo, Facultad de Informática y Electrónica, Carrera de Software",
+      "direccion": "Panamericana Sur Km 1 1/2, EC060155, Riobamba, Chimborazo, Ecuador",
+      "email": "gis.bastidas@espoch.edu.ec",
+      "orcid": "https://orcid.org/0000-0002-6070-7193",
+      "estudios": [
+        "Master of Science Major – Computer Science and Applications, Virginia Polytechnic Institute and State University, Estados Unidos de América",
+        "Ingeniero en Sistemas Informáticos, Escuela Chimborazo, Ecuador"
+      ],
+      "experiencia": [
+        "Docente en la Escuela Superior Politécnica de Chimborazo desde Octubre del 2018 hasta la actualidad.",
+        "Senior Developer en Top-Tech Advisors desde Agosto – 2018 hasta Septiembre – 2018.",
+        "Teaching Assistant – Docente en Virginia Polytechnic Institute and State University (Virginia Tech) desde Agosto – 2016 hasta Mayo – 2017.",
+        "Web Developer en Organization of American States (OEA) - Department of Information and Technology Services desde Enero – 2016 hasta Mayo – 2016.",
+        "Program Developer en EasySoft S.A. desde Septiembre – 2014 hasta Septiembre – 2015.",
+        "Desarrollador de Sistemas en Clínica Riobamba desde Mayo – 2013 hasta Mayo – 2014.",
+        "Desarrollador Web en la Escuela Superior Politécnica de Chimborazo desde Febrero – 2013 hasta Julio – 2013."
+      ]
+    },
+    {
+      "nombre": "Patricio René Moreno Costales",
+      "institucion": "Escuela Superior Politécnica de Chimborazo, Facultad de Informática y Electrónica, Carrera de Software",
+      "direccion": "Panamericana Sur Km 1 1/2, EC060155, Riobamba, Chimborazo, Ecuador",
+      "email": "pmoreno@espoch.edu.ec",
+      "orcid": "https://orcid.org/0000-0001-8255-8953",
+      "estudios": [
+        "Master of Science Major – Computer Science and Applications, Virginia Polytechnic Institute and State University, Estados Unidos de América",
+        "Ingeniero en Sistemas Informáticos, Escuela Chimborazo, Ecuador"
+      ],
+      "experiencia": [
+        "Docente en la Escuela Superior Politécnica de Chimborazo desde Octubre del 2018 hasta la actualidad.",
+        "Senior Developer en Top-Tech Advisors desde Agosto – 2018 hasta Septiembre – 2018.",
+        "Teaching Assistant – Docente en Virginia Polytechnic Institute and State University (Virginia Tech) desde Agosto – 2016 hasta Mayo – 2017.",
+        "Web Developer en Organization of American States (OEA) - Department of Information and Technology Services desde Enero – 2016 hasta Mayo – 2016.",
+        "Program Developer en EasySoft S.A. desde Septiembre – 2014 hasta Septiembre – 2015.",
+        "Desarrollador de Sistemas en Clínica Riobamba desde Mayo – 2013 hasta Mayo – 2014.",
+        "Desarrollador Web en la Escuela Superior Politécnica de Chimborazo desde Febrero – 2013 hasta Julio – 2013."
+      ]
+    }
+  ],
+  "correccion_y_diseno": {
+    "responsable": "Puerto Madero Editorial Académica",
+    "disenador": "José Luis Santillán Lima"
+  },
+  "diseno_montaje_produccion": {
+    "responsable": "Puerto Madero Editorial Académica",
+    "disenador": "Santillán Lima, José Luis"
+  },
+  "director_equipo_editorial": "Santillán Lima, Juan Carlos",
+  "editores": [
+    "Santillán Lima, Juan Carlos",
+    "Caichug Rivera, Daniela Margoth"
+  ],
+  "otros": [
+    "Hecho en Argentina",
+    "Made in Argentina",
+    "Este libro se sometió a arbitraje bajo el sistema de doble ciego (peer review)"
+  ]
+}

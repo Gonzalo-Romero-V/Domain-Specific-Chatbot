@@ -37,8 +37,8 @@ CONFIG = {
         "model": "text-embedding-3-large",  # cambiar aquí para experimentar
     },
     "paths": {
-        "input_chunks": DATA_DIR / "chunking_output.json",
-        "output_embeddings": DATA_DIR / "embedding_output.jsonl"
+        "input_chunks": DATA_DIR / "02_chunking_output.json",
+        "output_embeddings": DATA_DIR / "03_embedding_output.jsonl"
     }
 }
 

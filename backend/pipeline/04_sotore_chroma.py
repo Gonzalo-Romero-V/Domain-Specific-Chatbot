@@ -1,5 +1,6 @@
 import json
 from chromadb import PersistentClient
+from chromadb.errors import NotFoundError
 from pathlib import Path
 
 # =========================
@@ -7,8 +8,8 @@ from pathlib import Path
 # =========================
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "data"
-EMBED_FILE = DATA_DIR / "embedding_output.jsonl"
-CHROMA_DIR = DATA_DIR / "store_chroma_db_output"
+EMBED_FILE = DATA_DIR / "03_embedding_output.jsonl"
+CHROMA_DIR = DATA_DIR / "04_store_chroma_db_output"
 
 # =========================
 # INIT CLIENT
@@ -21,18 +22,16 @@ client = PersistentClient(path=str(CHROMA_DIR))
 # =========================
 collection_name = "fundamentos_ia"
 
-exists = False
-for col in client.list_collections():
-    if col.name == collection_name:
-        exists = True
-        break
+# 1. Intentar borrar si existe
+try:
+    client.delete_collection(name=collection_name)
+    print(f"🗑️ Colección '{collection_name}' eliminada (limpieza previa).")
+except NotFoundError:
+    print(f"ℹ️ La colección '{collection_name}' no existía, seguimos...")
 
-if not exists:
-    print("🆕 Creando nueva colección...")
-    collection = client.create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
-else:
-    print("ℹ️ Reutilizando colección existente...")
-    collection = client.get_collection(name=collection_name)
+# 2. Crear nueva
+print("🆕 Creando nueva colección...")
+collection = client.create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
 
 # =========================
 # LOAD EMBEDDINGS
@@ -46,7 +45,6 @@ with open(EMBED_FILE, "r", encoding="utf-8") as f:
         if "text" not in record: raise ValueError("❗ Falta 'text'")
         if "id" not in record: raise ValueError("❗ Falta 'id'")
 
-        # Ajuste importante:
         if "metadata" not in record or not record["metadata"]:
             record["metadata"] = {"source": "fundamentos_ia"}
 

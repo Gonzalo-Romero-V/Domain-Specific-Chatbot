@@ -47,7 +47,7 @@ try:
     print("...\n")
 
     # --- Guardar el texto en un archivo .txt ---
-    output_filename = "extraction_output.txt"
+    output_filename = "01_extraction_output.txt"
     output_file = DATA_DIR / output_filename
     
     with open(output_file, "w", encoding="utf-8") as f:
