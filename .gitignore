@@ -11,4 +11,4 @@ __pycache__/
 *.log
 
 # Archivos grandes derivados
-backend/data/
+data/

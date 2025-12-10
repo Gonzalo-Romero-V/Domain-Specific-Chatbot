@@ -1,47 +1,52 @@
-  "use client"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Header } from "@/components/Header"
 
-import * as React from "react"
-import dynamic from "next/dynamic";
-import { Chat } from "@/components/Chat";
-import { ChatHistory } from "@/components/ChatHistory";
-import { Button } from "@/components/ui/button";
-import { History, BookOpen } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-const PdfViewer = dynamic(() => import("@/components/PdfViewer").then(mod => mod.PdfViewer), {
-  ssr: false,
-});
-
-export default function Home() {
-  const [isHistoryOpen, setIsHistoryOpen] = React.useState(true)
-  const [isPdfOpen, setIsPdfOpen] = React.useState(true)
-
+export default function LandingPage() {
   return (
-    <main className="flex h-screen max-h-screen flex-col overflow-hidden supports-[height:100dvh]:h-[100dvh] supports-[height:100dvh]:max-h-[100dvh]">
-      <div className="flex w-full items-center justify-between p-4 border-b shrink-0 gap-4">
-        <div className="flex items-center gap-3">
-          <div>
-            <h1 className="text-2xl font-bold leading-tight">Domain Specific Chatbot</h1>
-            <h3 className="text-xs text-muted-foreground hidden sm:block mt-1">FUNDAMENTOS DE LA INTELIGENCIA ARTIFICIAL: UNA VISION INTRODUCTORIA</h3>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  Bienvenido al Chatbot de Dominio Específico
+                </h1>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Tu asistente inteligente para consultas especializadas. Obtén respuestas precisas y rápidas basadas en nuestra base de conocimientos.
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Link href="/login">
+                  <Button size="lg" className="h-11 px-8">
+                    Comenzar
+                  </Button>
+                </Link>
+                <Link href="/register">
+                  <Button variant="outline" size="lg" className="h-11 px-8">
+                    Crear cuenta
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-
-                <div className="flex items-center gap-3">
-          <div className="text-base font-bold hidden md:block">
-            GRUPO 00
-          </div>
-        </div>
-      </div>
-      
-      <div className="flex flex-1 overflow-hidden min-h-0 relative">
-        <ChatHistory isOpen={isHistoryOpen} onToggle={() => setIsHistoryOpen(!isHistoryOpen)} />
-        
-        <div className="flex-1 flex flex-col min-w-0 bg-background min-h-0 relative border-r border-l">
-          <Chat isPdfOpen={isPdfOpen} onTogglePdf={() => setIsPdfOpen(!isPdfOpen)} />
-        </div>
-
-        <PdfViewer isOpen={isPdfOpen} onToggle={() => setIsPdfOpen(!isPdfOpen)} url="/document.pdf" />
-      </div>
-    </main>
-  );
+        </section>
+      </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © 2024 Domain Specific Chatbot. Todos los derechos reservados.
+        </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Términos de servicio
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Privacidad
+          </Link>
+        </nav>
+      </footer>
+    </div>
+  )
 }

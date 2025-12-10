@@ -65,7 +65,7 @@ Este chatbot utiliza como única base de conocimiento el libro:
 ## Estructura del Repositorio
 
 
-- **Enlace:** https://git.com
+- **Enlace:** https://github.com/Gonzalo-Romero-V/Domain-Specific-Chatbot.git
 
 
 ## Proceso Realizado
