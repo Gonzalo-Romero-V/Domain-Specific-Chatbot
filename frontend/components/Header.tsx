@@ -8,6 +8,9 @@ export function Header() {
         <span className="text-lg">Domain Specific Chatbot</span>
       </Link>
       <nav className="flex items-center gap-4">
+        <Link href="/docs">
+          <Button variant="ghost">Documentación</Button>
+        </Link>
         <Link href="/login">
           <Button variant="ghost">Iniciar Sesión</Button>
         </Link>

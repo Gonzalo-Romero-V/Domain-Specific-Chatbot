@@ -59,6 +59,43 @@ graph TD
 
 ```
 
+### 🔄 Flujo de Endpoints
+
+```mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant F as Frontend
+    participant A as API FastAPI
+    participant R as RAG Service
+    participant M as MongoDB
+    participant C as ChromaDB
+    participant O as OpenAI
+
+    U->>F: Registro/Login
+    F->>A: POST /api/user
+    A->>M: Guardar usuario
+    M-->>A: Usuario creado
+    A-->>F: UserResponse
+    
+    U->>F: Crear conversación
+    F->>A: POST /api/conversation
+    A->>M: Guardar conversación
+    M-->>A: Conversación creada
+    A-->>F: ConversationResponse
+    
+    U->>F: Enviar pregunta
+    F->>A: POST /api/rag
+    A->>R: Ejecutar RAG
+    R->>C: Búsqueda semántica
+    C-->>R: Chunks relevantes
+    R->>O: Generar respuesta
+    O-->>R: Respuesta LLM
+    R->>M: Guardar mensajes
+    R-->>A: RAGResponse
+    A-->>F: Respuesta + Chunks
+    F-->>U: Mostrar respuesta
+```
+
 ### 🔧 Estructura del Backend
 
 El backend está organizado en dos módulos clave:
@@ -73,15 +110,16 @@ El backend está organizado en dos módulos clave:
 
 2.  **API REST (`backend/api/`)**:
     *   Construida con **FastAPI**.
-    *   Expone endpoints para el chat, historial y gestión de usuarios.
+    *   Endpoints para usuarios, conversaciones, mensajes y RAG.
     *   Integra los servicios de base de datos y el servicio RAG.
+    *   **Documentación interactiva:** http://localhost:8000/docs
 
 ### 💻 Frontend
 
 *   Desarrollado con **Next.js**.
 *   Interfaz de chat interactiva.
 *   Visualización del documento fuente.
-*   Gestión de autenticación y sesiones.
+*   Registro e inicio de sesión simplificado (basado en email, sin verificación de contraseña en backend).
 
 ---
 
@@ -123,7 +161,7 @@ python backend/start_api.py
 # Opción 2: Uvicorn directo
 uvicorn backend.api.main:app --reload --host 0.0.0.0 --port 8000
 ```
-La documentación de la API estará disponible en: http://localhost:8000/docs
+La documentación interactiva de la API estará disponible en: http://localhost:8000/docs
 
 ### 2. Configuración del Frontend
 
@@ -138,6 +176,18 @@ npm install
 npm run dev
 ```
 La aplicación estará disponible en: http://localhost:3000
+
+---
+
+## 🔐 Autenticación
+
+El sistema utiliza autenticación simplificada:
+
+- **Registro**: El usuario se registra con username, email y contraseña (mínimo 6 caracteres). La contraseña se valida en el frontend pero no se almacena en el backend.
+- **Login**: El usuario inicia sesión con su email. El sistema busca el usuario por email en la base de datos. No hay verificación de contraseña en el backend.
+- **Sesión**: El usuario se mantiene en el contexto de React y localStorage del navegador.
+
+> **Nota**: Esta es una implementación simplificada para desarrollo. Para producción se recomienda implementar autenticación completa con JWT y hash de contraseñas.
 
 ---
 
@@ -156,13 +206,41 @@ La aplicación estará disponible en: http://localhost:3000
 ```
 Domain-Specific-Chatbot/
 ├── backend/
-│   ├── api/            # Servidor FastAPI (Rutas, Modelos, Servicios)
-│   ├── pipeline/       # Scripts ETL y RAG Core
-│   └── start_api.py    # Entry point
-├── frontend/           # Aplicación Next.js
-├── data/               # Almacenamiento de datos procesados y ChromaDB
-├── docs/               # Documentación adicional
-└── requirements.txt    # Dependencias de Python
+│   ├── api/
+│   │   ├── db/              # Cliente MongoDB y repositorio
+│   │   ├── models/          # Schemas Pydantic
+│   │   ├── routers/         # Endpoints FastAPI
+│   │   ├── services/        # Servicios (RAG, DB)
+│   │   ├── config.py        # Configuración API
+│   │   └── main.py          # Aplicación FastAPI
+│   ├── pipeline/            # Scripts ETL y RAG Core
+│   │   ├── 01_extraction.py
+│   │   ├── 02_chunking.py
+│   │   ├── 03_embedding.py
+│   │   ├── 04_store_chroma.py
+│   │   ├── 05_query_core.py
+│   │   ├── 06_rag_response.py
+│   │   ├── config.py
+│   │   └── utils.py
+│   └── start_api.py         # Entry point
+├── frontend/
+│   ├── app/                 # Páginas Next.js (App Router)
+│   │   ├── chat/
+│   │   ├── login/
+│   │   ├── register/
+│   │   └── layout.tsx
+│   ├── components/          # Componentes React
+│   │   ├── ui/              # Componentes UI (shadcn/ui)
+│   │   ├── Chat.tsx
+│   │   ├── ChatHistory.tsx
+│   │   ├── PdfViewer.tsx
+│   │   └── ...
+│   ├── contexts/            # Contextos React (User, Conversation)
+│   ├── lib/                 # Utilidades y cliente API
+│   └── public/              # Archivos estáticos
+├── data/                    # Datos procesados y ChromaDB
+├── docs/                    # Documentación adicional
+└── requirements.txt         # Dependencias de Python
 ```
 
 
