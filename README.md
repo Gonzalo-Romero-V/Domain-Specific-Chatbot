@@ -117,7 +117,7 @@ Ejecuta los scripts en orden dentro de `backend/pipeline/` para procesar el PDF 
 **Iniciar el Servidor API:**
 
 ```powershell
-# Opción 1: Script de inicio
+# Opción 1: Script de inicio  (ESTA SI VALE)
 python backend/start_api.py
 
 # Opción 2: Uvicorn directo

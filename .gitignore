@@ -11,7 +11,7 @@ __pycache__/
 *.log
 
 # Archivos grandes derivados
-data/
+# data/
 
 # Configuración del editor
 .vscode/
